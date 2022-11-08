@@ -1,0 +1,39 @@
+@import '../../styles/variables';
+
+.Sidebar {
+    .container {
+        background: white;
+        padding: 2.5rem;
+        margin: 1rem;
+        box-shadow: $shadow1;
+    }
+
+    .menu {
+        display: flex;
+        
+        button {
+            width: 50%;
+            padding: 1.5rem;
+            background: white;
+            border: none;
+            margin-bottom: 3rem;
+            border-radius: 5px 5px 0px 0px;
+            background: $gray3;   
+            display: flex;
+            justify-content: center;         
+            align-items: center;
+            gap: 1rem;
+
+            &.active {
+                border-style: solid solid none solid;
+                border-width: 1px;
+                border-color: $gray1;
+                background: white;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+}

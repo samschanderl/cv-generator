@@ -1,0 +1,47 @@
+@import '../../styles/variables.scss';
+
+form {
+
+    .section {
+        margin-bottom: 3rem;
+    }
+
+    .section-title {
+        display: flex;
+        border-bottom: 1px solid $gray1;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        align-items: center;
+        gap: 1rem;
+
+        .icon {
+            transition: 2s ease-in;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .fields {
+        padding: 1.5rem;
+        border: 1px solid $gray3;
+        border-radius: .5rem;
+        background: $gray3;
+        display: none;
+
+        label {
+            display: block;
+            margin-bottom: 3rem;
+        }
+        input {
+            display: block;
+            margin: 1.5rem 0;
+            padding: .5rem;
+        }
+
+        &.active {
+            display: block;
+        }
+    }
+}

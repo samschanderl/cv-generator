@@ -1,0 +1,12 @@
+@import '../styles/variables.scss';
+
+
+.Output {
+    .container {
+        background: white;
+        margin: 1rem;
+        padding: 2rem;
+        border-radius: border1;
+        box-shadow: $shadow1;
+    }
+}

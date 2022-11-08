@@ -1,0 +1,48 @@
+.template-one {
+    padding: 2rem;
+
+    .heading {
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        overflow: hidden;
+        gap: 1rem;
+
+        .profile-img {
+
+            overflow: hidden;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+
+            img {
+                width: 100%;
+                height: auto;
+                transform: scale(1.2)
+            }
+
+        }
+        
+
+
+        .description {
+            padding: 0 1rem;
+            .name {
+                font-size: 4rem;
+                margin-bottom: 1.5rem;
+            }
+            .role {
+                margin-bottom: 1rem;    
+            }
+            .summary {
+                font-style: italic;
+                font-size: 1.6rem;
+            }
+
+        }
+
+
+    }
+
+
+}

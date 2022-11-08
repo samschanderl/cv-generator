@@ -1,0 +1,26 @@
+@import '../styles/variables.scss';
+
+.navbar {
+    background: white;
+    position: static;
+    width: 100%;
+    padding: 2rem;
+    box-shadow: $shadow1;
+
+    .container {
+        max-width: 1440px;
+        background: white;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+
+        .logo {
+            margin-right: auto;
+            background: white;
+            font-size: 2rem;
+        }
+        .profile {
+            background: white;
+        }
+    }
+}
