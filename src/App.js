@@ -37,7 +37,6 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <p>{width}</p>
       <div className="main">
         <MobileMenu toggleView={toggleView}/>
         {showSidebar || width >=720 ? <Sidebar /> : ''}
