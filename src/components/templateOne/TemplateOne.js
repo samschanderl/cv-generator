@@ -11,6 +11,8 @@ import placeholderImg from '../../testData/placeholder-image.png';
 // import sections
 import ContactSection from './sections/ContactSection';
 import WorkExperienceSection from './sections/WorkExperienceSection';
+import SkillsSection from './sections/SkillsSection';
+import EducationSection from './sections/EducationSection';
 
 export default function TemplateOne({ user }) {
   return (
@@ -29,9 +31,9 @@ export default function TemplateOne({ user }) {
 
         <ContactSection user={user}/>
         <WorkExperienceSection user={user}/>
-
-        <div className="education"></div>
-        <div className="other"></div>
+        <EducationSection user={user}/>
+        <SkillsSection user={user}/>
+        
     </div>
   )
 }

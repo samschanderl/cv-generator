@@ -15,7 +15,16 @@ const DataProvider = ({ children }) => {
             city: 'Berlin',
             company: 'Microsoft',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi sit accusantium rem necessitatibus totam aspernatur quis autem explicabo eum libero.'
-        }]
+        }],
+        education: [{
+            startYear: 2012,
+            endYear: 2015,
+            institution: 'Hochschule Berlin',
+            city: 'Berlin',
+            title: 'BSc Computer Science',
+            description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident alias nihil non voluptate ullam accusamus tenetur dolor, sint nulla reprehenderit.'
+        }],
+        skills: ['React', 'JavaScript']
 
     })
 

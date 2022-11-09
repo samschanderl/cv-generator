@@ -66,4 +66,24 @@
             }
         }
     }
+
+    .education {
+        display: flex;
+        flex-direction: column;
+
+        .section {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+
+            .date {
+                border-right: 2px solid $blue1;
+                margin-right: 2rem;
+            }
+        }
+    }
+
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }

@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import {useRef } from 'react';
 
 // import section components
-import GeneralInfo from './GeneralInfo';
+import GeneralInfoSection from './sections/GeneralInfoSection';
+import SkillsSection from './sections/SkillsSection.js'
 
 // import icons
 import { BsArrowRightCircle, BsArrowDownCircle } from 'react-icons/bs';
@@ -36,9 +37,13 @@ export default function Profile() {
         }
 
     const checkCurrentSection = async (sectionName) => {
-        const state = await sectionName.current.classList.contains('active');
+        const classList = await sectionName.current.classList
         // console.log(sectionName, state)
-        return state
+        console.log(classList);
+        if (classList.contains('active')) {
+            return true
+        }
+        return false
     }
 
     // add the input values to the user object. IMPORTANT: make sure input field contains name attribute equal to object
@@ -64,47 +69,24 @@ export default function Profile() {
 
   return (
     <div>            
-        <form>
-            {/* General information */}
-            <div className="general-info section">
-            <div className="section-title" onClick={() => showFields('general-info')} >
-                { checkCurrentSection(generalSection) ? <BsArrowDownCircle className="icon" /> : <BsArrowRightCircle className="icon"/>}
-                <h3>General Information</h3>
-            </div>
-            
-            <div ref={generalSection} className="fields active">
-                <label>Name
-                <input placeholder="Your Name" value={user.name} onChange={handleInput} name="name"></input>
-                </label>
-                <label>Current Job 
-                <input placeholder="Your Job Role" value={user.role} onChange={handleInput} name="role"></input>
-                </label>
-            </div>
 
-            </div>
-
-            {/* Skills */}
-            <div className="skills section">
-            <div className="section-title" onClick={() => showFields('skills')} >
-                {checkCurrentSection(skillsSection) ? <BsArrowDownCircle className="icon" /> : <BsArrowRightCircle className="icon"/>}
-                <h3>Skills</h3>
-            </div>
-            
-            <div ref={skillsSection} className="fields">
-                <label> Skills
-                <input placeholder="Add Your Skills"></input>
-                </label>
-            </div>
-
-            <GeneralInfo 
+            <GeneralInfoSection
                 showFields={showFields} 
                 user={user} 
+                section={generalSection}
                 handleInput={handleInput}
                 checkCurrentSection={checkCurrentSection}
             />
 
-            </div>
-        </form>
+            <SkillsSection
+                showFields={showFields} 
+                user={user} 
+                setUser={setUser}
+                section={skillsSection}
+                checkCurrentSection={checkCurrentSection}
+            />
+
+
   </div>
   )
 }

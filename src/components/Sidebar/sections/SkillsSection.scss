@@ -1,0 +1,14 @@
+.skills {
+
+    .skills-display {
+        display: flex;
+
+        .remove {
+
+            &:hover {
+                cursor: pointer;
+                color: blue;
+            }
+        }
+    }
+}
