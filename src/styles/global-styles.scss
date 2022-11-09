@@ -1,0 +1,56 @@
+@import './variables.scss';
+
+.pill {
+    flex: 1;
+    gap: 1rem;
+    background: $gray3;
+    margin: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border3;
+    font-size: 12px;
+    padding: .5rem 1.2rem;
+
+    .icon {
+        color: $blue1;
+    }
+}
+
+.heading-3 {
+    width: 100%;
+    margin: 2rem 0;
+}
+// Text styles
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+// Text sizes
+.text-12 {
+    font-size: 1.2rem;
+}
+
+.text-14 {
+    font-size: 1.4rem;
+}
+
+.text-16 {
+    font-size: 1.6rem;
+}
+
+// margins
+.my-half1 {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.my-1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

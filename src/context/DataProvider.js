@@ -11,6 +11,14 @@ const DataProvider = ({ children }) => {
         name: '',
         role: '',
         dateOfBirth: '',
+        workExperience: [{
+            startYear: 2019,
+            endYear: 2022,
+            position: 'Frontend Developer',
+            city: 'Berlin',
+            company: 'Microsoft',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi sit accusantium rem necessitatibus totam aspernatur quis autem explicabo eum libero.'
+        }]
 
     })
 

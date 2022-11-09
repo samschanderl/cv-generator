@@ -1,7 +1,9 @@
+@import '../../styles/variables.scss';
+
 .template-one {
     padding: 2rem;
 
-    .heading {
+    .overview {
         display: grid;
         grid-template-columns: 1fr 6fr;
         overflow: hidden;
@@ -20,11 +22,8 @@
                 height: auto;
                 transform: scale(1.2)
             }
-
         }
         
-
-
         .description {
             padding: 0 1rem;
             .name {
@@ -40,9 +39,31 @@
             }
 
         }
-
-
     }
 
+    .contact-data {
+        display: flex;
+        flex-wrap: wrap;
 
+        .heading {
+            width: 100%;
+            margin: 2rem 0;
+        }
+    }
+
+    .work-experience {
+        display: flex;
+        flex-direction: column;
+
+        .section {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            margin-bottom: 2rem;
+
+            .date {
+                border-right: 2px solid $blue1;
+                margin-right: 2rem;
+            }
+        }
+    }
 }
