@@ -1,4 +1,3 @@
-import {useRef} from 'react'
 
 // import icons
 import { BsArrowRightCircle, BsArrowDownCircle } from 'react-icons/bs';

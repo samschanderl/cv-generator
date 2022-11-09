@@ -23,7 +23,7 @@ export default function SkillsSection({user, setUser, showFields, checkCurrentSe
 
     const removeSkill = (e) => {
         const newSkillsArray = user.skills.filter(skill => 
-            skill != e.target.previousSibling.textContent
+            skill !== e.target.previousSibling.textContent
         );
         setUser(user => ({
             ...user, 

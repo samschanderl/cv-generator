@@ -5,9 +5,6 @@ import {useRef } from 'react';
 import GeneralInfoSection from './sections/GeneralInfoSection';
 import SkillsSection from './sections/SkillsSection.js'
 
-// import icons
-import { BsArrowRightCircle, BsArrowDownCircle } from 'react-icons/bs';
-
 // import data context
 import { useDataContext } from '../../context/DataProvider';
 
