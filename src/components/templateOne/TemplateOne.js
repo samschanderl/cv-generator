@@ -6,9 +6,7 @@ import './TemplateOne.scss';
 import '../../styles/global-styles.scss';
 
 // import testdata & test images
-import profileImg from '../../testData/Samuel-2.jpg';
 import placeholderImg from '../../testData/placeholder-image.png';
-import { testData } from '../../testData/testData';
 
 // import sections
 import ContactSection from './sections/ContactSection';
