@@ -2,6 +2,9 @@ import { logRoles } from '@testing-library/react';
 import { useEffect } from 'react';
 import {useRef } from 'react';
 
+// import section components
+import GeneralInfo from './GeneralInfo';
+
 // import icons
 import { BsArrowRightCircle, BsArrowDownCircle } from 'react-icons/bs';
 
@@ -71,7 +74,7 @@ export default function Profile() {
             </div>
             
             <div ref={generalSection} className="fields active">
-                <label>Name 
+                <label>Name
                 <input placeholder="Your Name" value={user.name} onChange={handleInput} name="name"></input>
                 </label>
                 <label>Current Job 
@@ -89,10 +92,17 @@ export default function Profile() {
             </div>
             
             <div ref={skillsSection} className="fields">
-                <label>Name 
-                <input placeholder="Your Name"></input>
+                <label> Skills
+                <input placeholder="Add Your Skills"></input>
                 </label>
             </div>
+
+            <GeneralInfo 
+                showFields={showFields} 
+                user={user} 
+                handleInput={handleInput}
+                checkCurrentSection={checkCurrentSection}
+            />
 
             </div>
         </form>

@@ -37,7 +37,14 @@ form {
         input {
             display: block;
             margin: 1.5rem 0;
-            padding: .5rem;
+            padding: .75rem;
+            border: none;
+            border-left: 3px solid $gray1;
+
+            &:focus {
+                outline: none;
+                border-left: 3px solid $green2;
+            }
         }
 
         &.active {
