@@ -1,5 +1,5 @@
 // import React 
-import { useState, useLayoutEffect } from 'react';
+import { useState } from 'react';
 
 // import custom hooks
 import { useWindowSize } from './hooks/useWindowSize';
@@ -29,7 +29,6 @@ function App() {
     else if (e.target.name === 'showOutput') {
       e.target.classList.add('active');
       e.target.previousSibling.classList.remove('active');
-      console.log(e.target)
       setShowSidebar(false);
       setShowOutput(true);
     }
