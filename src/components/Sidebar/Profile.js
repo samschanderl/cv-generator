@@ -3,7 +3,8 @@ import {useRef } from 'react';
 
 // import section components
 import GeneralInfoSection from './sections/GeneralInfoSection';
-import SkillsSection from './sections/SkillsSection.js'
+import ContactInfoSection from './sections/ContactInfoSection';
+import SkillsSection from './sections/SkillsSection.js';
 
 // import data context
 import { useDataContext } from '../../context/DataProvider';
@@ -17,6 +18,7 @@ export default function Profile() {
 
     // create refs to the sections to style and display them based on actions
     const generalSection = useRef();
+    const contactSection = useRef();
     const skillsSection = useRef();
 
       // show fields of certain sections based on click
@@ -71,6 +73,15 @@ export default function Profile() {
                 showFields={showFields} 
                 user={user} 
                 section={generalSection}
+                handleInput={handleInput}
+                checkCurrentSection={checkCurrentSection}
+            />
+
+            <ContactInfoSection
+                showFields={showFields} 
+                user={user} 
+                setUser={setUser}
+                section={contactSection}
                 handleInput={handleInput}
                 checkCurrentSection={checkCurrentSection}
             />

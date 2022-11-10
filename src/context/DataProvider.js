@@ -7,7 +7,17 @@ const DataProvider = ({ children }) => {
     const [user, setUser] = React.useState({
         name: '',
         role: '',
+        description: '',
         dateOfBirth: '',
+        email: '',
+        phone: '',
+        address: {
+            street: '',
+            streetNumber: '',
+            postalCode: '',
+            city: '', 
+            country: '',
+        },
         workExperience: [{
             startYear: 2019,
             endYear: 2022,
