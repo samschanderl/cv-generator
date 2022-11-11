@@ -12,10 +12,17 @@ export default function ContactSection({user}) {
 
   // create combined address string on address update
   useEffect(() => {
-    console.log(user.address);
-    const combinedAddress = `${user.address.street} ${user.address.streetNumber}, ${user.address.postalCode} ${user.address.city}, ${user.address.country}`;
+    // create a combined address which sets the commas between street, city, and country depending on which fields have been filled in
+    const combinedAddress = `${user.address.street} ${user.address.streetNumber}${user.address.street && user.address.streetNumber && (user.address.postalCode || user.address.city || user.address.country) ? ',': ''} 
+                             ${user.address.postalCode} ${user.address.city}${(user.address.postalCode || user.address.city) && user.address.country ? ',': ''} 
+                             ${user.address.country}
+                             `;
     setAddress(combinedAddress);
-    combinedAddress.length >= 10 ? setAddressProvided(true) : setAddressProvided(false)
+    // check if the address is empty or not
+    var addressNotEmpty = Object.keys(user.address).some((k) => {
+      return user.address[k] !== ''
+    })
+    addressNotEmpty ? setAddressProvided(true) : setAddressProvided(false)
   }, [user.address])
 
   return (

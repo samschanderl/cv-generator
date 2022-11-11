@@ -2,7 +2,7 @@
 // import icons
 import { BsArrowRightCircle, BsArrowDownCircle } from 'react-icons/bs';
 
-export default function GeneralInfo({user, showFields, handleInput, section}) {
+export default function WorkExperience({user, showFields, handleInput, section}) {
 
   return (
     <>

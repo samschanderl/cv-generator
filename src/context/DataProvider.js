@@ -34,7 +34,9 @@ const DataProvider = ({ children }) => {
             title: 'BSc Computer Science',
             description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident alias nihil non voluptate ullam accusamus tenetur dolor, sint nulla reprehenderit.'
         }],
-        skills: ['React', 'JavaScript']
+        skills: ['React', 'JavaScript'],
+        interests: [],
+        extracurricularActivities: []
 
     })
 

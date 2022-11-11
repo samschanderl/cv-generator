@@ -2,7 +2,7 @@
 // import icons
 import { BsArrowRightCircle, BsArrowDownCircle } from 'react-icons/bs';
 
-export default function ContactInfoSection({user, setUser, showFields, handleInput, checkCurrentSection, section}) {
+export default function ContactInfoSection({user, setUser, showFields, handleInput, section}) {
 
     const handleAddress = (e) => {
         console.log(e.target)
@@ -20,6 +20,27 @@ export default function ContactInfoSection({user, setUser, showFields, handleInp
                 address: newAddress
             }))
         }
+        else if (e.target.name === 'postalCode') {
+            let newAddress = {...user.address, postalCode: e.target.value};
+            setUser(user => ({
+                ...user, 
+                address: newAddress
+            }))
+        }
+        else if (e.target.name === 'city') {
+            let newAddress = {...user.address, city: e.target.value};
+            setUser(user => ({
+                ...user, 
+                address: newAddress
+            }))
+        }
+        else if (e.target.name === 'country') {
+            let newAddress = {...user.address, country: e.target.value};
+            setUser(user => ({
+                ...user, 
+                address: newAddress
+            }))
+        }
 
     }
 
@@ -27,12 +48,12 @@ export default function ContactInfoSection({user, setUser, showFields, handleInp
     <>
         <form>
             <div className="general-info section">
-                <div className="section-title" onClick={() => showFields('general-info')} >
-                    { checkCurrentSection(section) ? <BsArrowDownCircle className="icon" /> : <BsArrowRightCircle className="icon"/>}
+                <div className="section-title" onClick={() => showFields('contact-info')} >
+                    { section ? <BsArrowDownCircle className="icon" /> : <BsArrowRightCircle className="icon"/>}
                     <h3>Contact Information</h3>
                 </div>
                 
-                <div ref={section} className="fields active">
+                <div ref={section} className="fields">
 
                     <label>Email Address
                         <input 
@@ -100,7 +121,7 @@ export default function ContactInfoSection({user, setUser, showFields, handleInp
                             placeholder="e.g. Germany" 
                             value={user.address.country} 
                             onChange={handleAddress} 
-                            name="city" 
+                            name="country"
                             className={user.address.country ? 'filled' : ''}
                             />
                     </label>

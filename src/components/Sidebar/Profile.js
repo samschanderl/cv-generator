@@ -28,6 +28,21 @@ export default function Profile() {
             removeActiveClasses();
             generalSection.current.classList.add('active');
         }
+        else if (section === 'contact-info') {
+            // add active class and remove from others
+            removeActiveClasses();
+            contactSection.current.classList.add('active');
+        }
+        else if (section === 'work-experience') {
+            // add active class and remove from others
+            removeActiveClasses();
+            contactSection.current.classList.add('active');
+        }
+        else if (section === 'education') {
+            // add active class and remove from others
+            removeActiveClasses();
+            contactSection.current.classList.add('active');
+        }
         else if (section === 'skills') {
             // add active class and remove from others
             removeActiveClasses();
@@ -35,15 +50,15 @@ export default function Profile() {
         }
         }
 
-    const checkCurrentSection = async (sectionName) => {
-        const classList = await sectionName.current.classList
-        // console.log(sectionName, state)
-        console.log(classList);
-        if (classList.contains('active')) {
-            return true
-        }
-        return false
-    }
+    // const checkCurrentSection = async (sectionName) => {
+    //     const classList = await sectionName.current.classList
+    //     // console.log(sectionName, state)
+    //     console.log(classList);
+    //     if (classList.contains('active')) {
+    //         return true
+    //     }
+    //     return false
+    // }
 
     // add the input values to the user object. IMPORTANT: make sure input field contains name attribute equal to object
     const handleInput = (e) => {
@@ -59,6 +74,7 @@ export default function Profile() {
 
     const removeActiveClasses = () => {
         generalSection.current.classList.remove('active');
+        contactSection.current.classList.remove('active');
         skillsSection.current.classList.remove('active');
     }
 
@@ -74,7 +90,6 @@ export default function Profile() {
                 user={user} 
                 section={generalSection}
                 handleInput={handleInput}
-                checkCurrentSection={checkCurrentSection}
             />
 
             <ContactInfoSection
@@ -83,15 +98,14 @@ export default function Profile() {
                 setUser={setUser}
                 section={contactSection}
                 handleInput={handleInput}
-                checkCurrentSection={checkCurrentSection}
             />
+
 
             <SkillsSection
                 showFields={showFields} 
                 user={user} 
                 setUser={setUser}
                 section={skillsSection}
-                checkCurrentSection={checkCurrentSection}
             />
 
 

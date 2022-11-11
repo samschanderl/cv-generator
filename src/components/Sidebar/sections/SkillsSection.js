@@ -6,7 +6,7 @@ import './SkillsSection.scss';
 // import icons
 import { BsArrowRightCircle, BsArrowDownCircle } from 'react-icons/bs';
 
-export default function SkillsSection({user, setUser, showFields, checkCurrentSection, section}) {
+export default function SkillsSection({user, setUser, showFields, section}) {
 
     const skillInput = useRef();
 
@@ -36,7 +36,7 @@ export default function SkillsSection({user, setUser, showFields, checkCurrentSe
         <form>
             <div className="skills section">
                 <div className="section-title" onClick={() => showFields('skills')} >
-                    {checkCurrentSection(section) ? <BsArrowDownCircle className="icon" /> : <BsArrowRightCircle className="icon"/>}
+                    {section ? <BsArrowDownCircle className="icon" /> : <BsArrowRightCircle className="icon"/>}
                     <h3>Skills</h3>
                 </div>
                 
