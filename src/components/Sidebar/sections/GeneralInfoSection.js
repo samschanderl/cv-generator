@@ -2,14 +2,14 @@
 // import icons
 import { BsArrowRightCircle, BsArrowDownCircle } from 'react-icons/bs';
 
-export default function GeneralInfo({user, showFields, handleInput, section}) {
+export default function GeneralInfo({user, showFields, handleInput, section, toggleArrowDown}) {
 
   return (
     <>
         <form>
             <div className="general-info section">
                 <div className="section-title" onClick={() => showFields('general-info')} >
-                    { section ? <BsArrowDownCircle className="icon" /> : <BsArrowRightCircle className="icon"/>}
+                    { toggleArrowDown === 'general-info' ? <BsArrowDownCircle className="icon" /> : <BsArrowRightCircle className="icon"/>}
                     <h3>General Information</h3>
                 </div>
                 

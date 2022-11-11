@@ -2,7 +2,7 @@
 // import icons
 import { BsArrowRightCircle, BsArrowDownCircle } from 'react-icons/bs';
 
-export default function ContactInfoSection({user, setUser, showFields, handleInput, section}) {
+export default function ContactInfoSection({user, setUser, showFields, handleInput, section, toggleArrowDown}) {
 
     const handleAddress = (e) => {
         console.log(e.target)
@@ -47,9 +47,9 @@ export default function ContactInfoSection({user, setUser, showFields, handleInp
   return (
     <>
         <form>
-            <div className="general-info section">
+            <div className="contact-info section">
                 <div className="section-title" onClick={() => showFields('contact-info')} >
-                    { section ? <BsArrowDownCircle className="icon" /> : <BsArrowRightCircle className="icon"/>}
+                    { toggleArrowDown === 'contact-info' ? <BsArrowDownCircle className="icon" /> : <BsArrowRightCircle className="icon"/>}
                     <h3>Contact Information</h3>
                 </div>
                 

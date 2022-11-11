@@ -5,7 +5,7 @@ export default function EducationSection({user}) {
     <div className="education">
         <h3 className="heading-3">Education</h3>
         {user.education.map(education => (
-            <div className="section">
+            <div className="section" key={`${education.startYear}-${education.title}`}>
                 <div className="date">
                     <p>{education.startYear} - </p>
                     <p>{education.endYear}</p>

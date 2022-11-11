@@ -6,7 +6,7 @@ import './SkillsSection.scss';
 // import icons
 import { BsArrowRightCircle, BsArrowDownCircle } from 'react-icons/bs';
 
-export default function SkillsSection({user, setUser, showFields, section}) {
+export default function SkillsSection({user, setUser, showFields, section, toggleArrowDown}) {
 
     const skillInput = useRef();
 
@@ -36,7 +36,7 @@ export default function SkillsSection({user, setUser, showFields, section}) {
         <form>
             <div className="skills section">
                 <div className="section-title" onClick={() => showFields('skills')} >
-                    {section ? <BsArrowDownCircle className="icon" /> : <BsArrowRightCircle className="icon"/>}
+                    {toggleArrowDown === 'skills' ? <BsArrowDownCircle className="icon" /> : <BsArrowRightCircle className="icon"/>}
                     <h3>Skills</h3>
                 </div>
                 
@@ -47,11 +47,11 @@ export default function SkillsSection({user, setUser, showFields, section}) {
                             placeholder="Add Your Skills" 
                             name="skills">
                         </input>
-                        <button onClick={addSkill}>Add Skill</button>
+                        <button className="btn btn--blue" onClick={addSkill}>Add Skill</button>
                     </label>
                     <div className="skills-display">
                     {user.skills.map(skill => (
-                        <span className="pill pill--light">{skill}<span className="remove" onClick={removeSkill}>x</span></span>
+                        <span className="pill pill--light" key={skill}>{skill}<span className="remove" onClick={removeSkill}>x</span></span>
                     ))}
                     </div>
                 </div>

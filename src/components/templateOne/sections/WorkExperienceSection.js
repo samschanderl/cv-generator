@@ -5,7 +5,7 @@ export default function WorkExperienceSection({user}) {
     <div className="work-experience">
         <h3 className="heading-3">Work Experience</h3>
             {user.workExperience.map(experience => (
-                <div className="section">
+                <div className="section" key={`${experience.position}-${experience.company}`}>
                     <div className="date">
                         <p>{experience.startYear} - </p>
                         <p>{experience.endYear}</p>

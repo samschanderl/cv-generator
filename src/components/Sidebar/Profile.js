@@ -1,10 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {useRef } from 'react';
 
 // import section components
 import GeneralInfoSection from './sections/GeneralInfoSection';
 import ContactInfoSection from './sections/ContactInfoSection';
 import SkillsSection from './sections/SkillsSection.js';
+import WorkExperience from './sections/WorkExperience';
 
 // import data context
 import { useDataContext } from '../../context/DataProvider';
@@ -16,10 +17,15 @@ export default function Profile() {
     // data from context API
     const { user, setUser } = useDataContext();
 
+    // use state
+    const [toggleArrowDown, setToggleArrowDown] = useState('general-info');
+
     // create refs to the sections to style and display them based on actions
     const generalSection = useRef();
     const contactSection = useRef();
     const skillsSection = useRef();
+    const workExperienceSection = useRef();
+    const educationSection = useRef();
 
       // show fields of certain sections based on click
     const showFields = async (section) => {
@@ -27,38 +33,32 @@ export default function Profile() {
             // add active class and remove from others
             removeActiveClasses();
             generalSection.current.classList.add('active');
+            setToggleArrowDown('general-info');
         }
         else if (section === 'contact-info') {
             // add active class and remove from others
             removeActiveClasses();
             contactSection.current.classList.add('active');
+            setToggleArrowDown('contact-info');
         }
         else if (section === 'work-experience') {
             // add active class and remove from others
             removeActiveClasses();
-            contactSection.current.classList.add('active');
+            workExperienceSection.current.classList.add('active');
         }
         else if (section === 'education') {
             // add active class and remove from others
             removeActiveClasses();
-            contactSection.current.classList.add('active');
+            educationSection.current.classList.add('active');
         }
         else if (section === 'skills') {
             // add active class and remove from others
             removeActiveClasses();
             skillsSection.current.classList.add('active');
+            setToggleArrowDown('skills');
+            console.log(toggleArrowDown)
         }
         }
-
-    // const checkCurrentSection = async (sectionName) => {
-    //     const classList = await sectionName.current.classList
-    //     // console.log(sectionName, state)
-    //     console.log(classList);
-    //     if (classList.contains('active')) {
-    //         return true
-    //     }
-    //     return false
-    // }
 
     // add the input values to the user object. IMPORTANT: make sure input field contains name attribute equal to object
     const handleInput = (e) => {
@@ -78,34 +78,37 @@ export default function Profile() {
         skillsSection.current.classList.remove('active');
     }
 
-    useEffect(() => {
-        console.log(user);
-    }, [user])
-
   return (
     <div>            
 
             <GeneralInfoSection
                 showFields={showFields} 
                 user={user} 
+                toggleArrowDown={toggleArrowDown}
                 section={generalSection}
                 handleInput={handleInput}
             />
-
             <ContactInfoSection
                 showFields={showFields} 
                 user={user} 
+                toggleArrowDown={toggleArrowDown}
                 setUser={setUser}
                 section={contactSection}
                 handleInput={handleInput}
             />
-
-
             <SkillsSection
                 showFields={showFields} 
+                toggleArrowDown={toggleArrowDown}
                 user={user} 
                 setUser={setUser}
                 section={skillsSection}
+            />
+            <WorkExperience
+                showFields={showFields} 
+                toggleArrowDown={toggleArrowDown}
+                user={user} 
+                setUser={setUser}
+                section={workExperienceSection}
             />
 
 

@@ -10,7 +10,7 @@ form {
         display: flex;
         border-bottom: 1px solid $gray1;
         margin-bottom: 2rem;
-        padding-bottom: 1rem;
+        padding: 1rem .5rem;
         align-items: center;
         gap: 1rem;
 
@@ -18,8 +18,14 @@ form {
             transition: 2s ease-in;
         }
 
+        h3 {
+            background: transparent;
+        }
+
         &:hover {
             cursor: pointer;
+            background: $gray3;
+            border-radius: 1rem .5rem 0 0;
         }
     }
 
@@ -32,7 +38,7 @@ form {
 
         label {
             display: block;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
         }
         input, textarea {
             display: block;
@@ -41,6 +47,7 @@ form {
             padding: .75rem;
             border: none;
             border-left: 3px solid $gray1;
+            font: inherit;
 
             &.filled {
                 border-left: 3px solid $blue1;
