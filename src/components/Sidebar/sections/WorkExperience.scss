@@ -10,7 +10,13 @@
     }
 
     .experience-display {
-        display: flex;
+        display: grid;
+
+        .experience-heading {
+            margin: .5rem 1rem;
+            padding: .5rem 1rem;
+            font-style: italic;
+        }
 
         .experience-item {
             flex: 1;
@@ -18,16 +24,35 @@
             background: white;
             padding: 1rem;
             margin: 1rem;
+            align-items: center;
+            border-left: 3px solid $blue1;
         }
 
-        .remove {
-            margin-left: auto;
-            padding: 0 1rem;
+        .icons {
+            padding: 0.2rem 1rem;
+            display: flex;
+            align-items: center;
             border-left: 1px solid $gray1;
+
+        }
+
+        .edit {
+            margin-left: auto;
+            color: $dark1;
 
             &:hover {
                 cursor: pointer;
-                color: blue;
+                color: $gray1;
+            }
+        }
+
+        .remove {
+            font-weight: bold;
+            color: $red;
+
+            &:hover {
+                cursor: pointer;
+                color: $gray1;
             }
         }
     }

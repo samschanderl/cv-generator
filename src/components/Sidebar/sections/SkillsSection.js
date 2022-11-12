@@ -51,7 +51,9 @@ export default function SkillsSection({user, setUser, showFields, section, toggl
                     </label>
                     <div className="skills-display">
                     {user.skills.map(skill => (
-                        <span className="pill pill--light" key={skill}>{skill}<span className="remove" onClick={removeSkill}>x</span></span>
+                        <span className="pill pill--light" key={skill}>{skill}
+                            <span className="remove" onClick={removeSkill}>x</span>
+                        </span>
                     ))}
                     </div>
                 </div>

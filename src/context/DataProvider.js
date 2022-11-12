@@ -19,6 +19,7 @@ const DataProvider = ({ children }) => {
             country: '',
         },
         workExperience: [{
+            id: 1,
             startYear: 2019,
             endYear: 2022,
             position: 'Frontend Developer',

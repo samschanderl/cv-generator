@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import {MdModeEdit, MdOutlineRemoveCircleOutline} from 'react-icons/md';
 
 // import styles
 import './WorkExperience.scss';
@@ -18,19 +19,36 @@ export default function SkillsSection({user, setUser, showFields, section, toggl
 
     const addWorkExperience = (e) => {
         e.preventDefault();
+        let newID = (Math.floor(Math.random()*10000));
         let newWorkExperience = [...user.workExperience, 
             {
+            id: newID,
             role: jobInput.current.value,
             company: companyInput.current.value,
             startYear: startYearInput.current.value,
             endYear: endYearInput.current.value,
-            description: descriptionInput.current.value
+            description: descriptionInput.current.value,
+
         }]
         console.log(newWorkExperience);
         setUser(user => ({
             ...user, 
             workExperience: newWorkExperience
             }))
+    }
+
+    const editWorkExperience = (experienceID) => {
+        console.log(experienceID);
+        console.log('editing')
+        const selectedItem = user.workExperience.filter(experience => {
+            return experience.id === experienceID
+        });
+        jobInput.current.value = selectedItem[0].position;
+        companyInput.current.value = selectedItem[0].company;
+        startYearInput.current.value = selectedItem[0].startYear;
+        endYearInput.current.value = selectedItem[0].endYear;
+        descriptionInput.current.value = selectedItem[0].description;
+        console.log(selectedItem[0])
     }
     
     const removeWorkExperience = (e) => {
@@ -83,7 +101,7 @@ export default function SkillsSection({user, setUser, showFields, section, toggl
                                 min="1950"
                                 max={currentYear + 10}
                                 step="1"
-                                value={currentYear}
+                                value="2022"
                                 placeholder="Start Year" 
                                 name="endYear">
                             </input>
@@ -99,8 +117,13 @@ export default function SkillsSection({user, setUser, showFields, section, toggl
                     </div>
 
                     <div className="experience-display">
+                    <p className="experience-heading">Your Previous Experience</p>
                     {user.workExperience.map(experience => (
-                        <p className="experience-item" key={experience.position}>{experience.position}<span className="remove" onClick={removeWorkExperience}>x</span></p>
+                        <p className="experience-item" key={experience.position}>
+                            {experience.position} - {experience.startYear}-{experience.endYear}
+                            <span className="icons edit" onClick={() => {editWorkExperience(experience.id)}}><MdModeEdit/></span>
+                            <span className="icons remove" onClick={removeWorkExperience}><MdOutlineRemoveCircleOutline /></span>
+                        </p>
                     ))}
                     </div>
                 </div>
